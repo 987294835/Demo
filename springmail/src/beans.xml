@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<!-- 网易邮箱的smtp地址(发送邮件服务器地址) -->
+		<property name="host" value="smtp.163.com"></property>
+		<!-- 发送邮件服务器端口号-->
+		<property name="port" value="25"></property>
+		<!-- 发送邮件的用户名 -->
+		<property name="username" value="13502563409@163.com"></property>
+		<!-- 发送邮件用户的密码 -->
+		<property name="password" value="lck123"></property>
+		<!-- 设置发送邮件的一些属性 -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
