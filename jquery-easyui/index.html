@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>学生实践模拟练习系统</title>
+		<link rel="stylesheet" type="text/css" href="css/easyui.css">
+		<link rel="stylesheet" type="text/css" href="css/icon.css">
+		<link rel="stylesheet" type="text/css" href="css/demo.css">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+		<style type="text/css">
+			.panel-header {
+				background: rgb(227, 232, 252) none repeat scroll 0% 0%;
+			}
+			
+			.panel-body {
+				background: white none repeat scroll 0% 0%;
+			}
+			
+			.accordion {
+				background: white;
+			}
+			
+			.tabs {
+				background: rgb(227, 232, 252) none repeat scroll 0% 0%;
+			}
+			
+			.panel {
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body class="easyui-layout">
+		<!--
+    	作者：offline
+    	时间：2016-07-14
+    	描述：north面板
+    -->
+		<div data-options="region:'north',border:true" style="height:50px;padding:10px;">
+			<img src="css/images/logo.png" style="height: 20px">
+			<b style="font-size: 20px;padding: 10px;">学生实践模拟练习系统</b>
+		</div>
+		<!--
+    	作者：offline
+    	时间：2016-07-14
+    	描述：west面板
+    -->
+		<div data-options="region:'west',split:true,title:'菜单导航'" style="width:200px;">
+			<div class="easyui-accordion" data-options="fit:true,border:false,selected:false">
+				<div title="列表类" style="padding:10px;">
+					<ul class="easyui-tree" data-options="lines:true">
+						<li><a onclick="addPanel('学生列表','student.html')">学生列表</a></li>
+						<li><a onclick="addPanel('课程结构','course.html')">课程结构</a></li>
+						<li><a onclick="addPanel('表单验证','form.html')">表单验证</a></li>
+					</ul>
+				</div>
+				<div title="组件" style="padding:10px;">
+					<ul class="easyui-tree" data-options="lines:true">
+						<li><a onclick="addPanel('结构树','treestructure.html')">结构树</a></li>
+						<li><a onclick="addPanel('下拉树','downtree.html')">下拉树</a></li>
+						<li><a onclick="addPanel('树列表开统计','clientpagination.html')">树列表开统计</a></li>
+						<li><a onclick="addPanel('tabs','tabimage.html')">tabs</a></li>
+					</ul>
+				</div>
+				<div title="外部调用" style="padding:10px">
+					<ul class="easyui-tree" data-options="lines:true">
+						<li><a onclick="addPanel('百度','http://www.baidu.com')">百度</a></li>
+						<li><a onclick="addPanel('腾讯','http://www.qq.com')">腾讯</a></li>
+						<li><a onclick="addPanel('百度地图','map.html')">百度地图</a></li>
+						<li><a onclick="addPanel('中国地图','chinamap.html')">中国地图</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-options="region:'center'" id="center">
+			<div class="easyui-tabs" style="width:100%;height:100%" id="tt">
+				<div title="首页">
+					<table id="tts" class="easyui-propertygrid" data-options="
+						url: 'ext/propertygrid_data1.json',
+						method: 'get',
+						showGroup: true,
+						fit: true,
+						border: false
+					">
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：offline
+        	时间：2016-07-14
+        	描述：右键菜单
+        -->
+		<div id="mm" class="easyui-menu" style="width:200px;">
+			<div id="mm-tabclosrefresh" data-options="name:6">刷新</div>
+			<div id="mm-tabclose" data-options="name:1">关闭</div>
+			<div id="mm-tabcloseall" data-options="name:2">全部关闭</div>
+			<div id="mm-tabcloseother" data-options="name:3">除此之外全部关闭</div>
+			<div class="menu-sep"></div>
+			<div id="mm-tabcloseright" data-options="name:4">当前页右侧全部关闭</div>
+			<div id="mm-tabcloseleft" data-options="name:5">当前页左侧全部关闭</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function addPanel(title, url) {
+			if ($('#tt').tabs('exists', title)) {
+				$('#tt').tabs('select', title);
+			} else {
+
+				$('#tt').tabs('add', {
+					title: title,
+					content: '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:1100px;height:550px;margin-left:50px"></iframe>',
+					closable: true
+				});
+			}
+		}
+
+		function removePanel() {
+			var tab = $('#tt').tabs('getSelected');
+			if (tab) {
+				var index = $('#tt').tabs('getTabIndex', tab);
+				$('#tt').tabs('close', index);
+			}
+		}
+
+		function closeTab(menu, type) {
+			var allTabs = $("#tt").tabs('tabs');
+			var allTabtitle = [];
+			$.each(allTabs, function(i, n) {
+				var opt = $(n).panel('options');
+				if (opt.closable)
+					/*alert(opt.title);*/
+				allTabtitle.push(opt.title);
+			});
+			var curTabTitle = $(menu).data("tabTitle");
+			var curTabIndex = $("#tt").tabs("getTabIndex", $("#tt").tabs("getTab", curTabTitle));
+			switch (type) {
+				case 1://关闭当前tab
+					$("#tt").tabs("close", curTabIndex);
+					return false;
+					break;
+				case 2://关闭所有tab
+					for (var i = 0; i < allTabtitle.length; i++) {
+						$('#tt').tabs('close', allTabtitle[i]);
+					}
+					break;
+				case 3://除此之外全部关闭
+					for (var i = 0; i < allTabtitle.length; i++) {
+						if (curTabTitle != allTabtitle[i])
+							$('#tt').tabs('close', allTabtitle[i]);
+					}
+					$('#tt').tabs('select', curTabTitle);
+					break;
+				case 4://关闭右侧所有页面
+					for (var i = curTabIndex; i < allTabtitle.length; i++) {
+						$('#tt').tabs('close', allTabtitle[i]);
+					}
+					$('#tt').tabs('select', curTabTitle);
+					break;
+				case 5://关闭左侧所有页面
+					for (var i = 0; i < curTabIndex - 1; i++) {
+						$('#tt').tabs('close', allTabtitle[i]);
+					}
+					$('#tt').tabs('select', curTabTitle);
+					break;
+				case 6: //刷新
+					var panel = $("#tt").tabs("getTab", curTabTitle).panel("refresh");
+					break;
+			}
+		}
+
+		$('#tt').tabs({
+			onContextMenu: function(e, title, index) {
+				e.preventDefault();
+				if (index > 0) {
+					$('#mm').menu('show', {
+						left: e.pageX,
+						top: e.pageY
+					}).data("tabTitle", title);
+				}
+			}
+		});
+		$("#mm").menu({
+            onClick: function (item) {
+                closeTab(this, item.name);
+            }
+        });
+	</script>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta charset=UTF-8>
+		<title>prifile</title>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery在bootstrap.min.js 之前引入 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.navbar-inverse .navbar-nav li a {
+				color: wheat;
+			}
+			
+			body {
+				background: #ebf9f1;
+			}
+			
+			.well {
+				background: white;
+				border: 1px solid #dedede;
+				box-shadow: 0 0 2px #000;
+			}
+			
+			#photos ul li {
+				list-style: none;
+				/*列表样式设为无*/
+				display: inline-table;
+				/*使圖片能夠在同一行顯示*/
+				padding: 10px;
+				/*float: left;*/
+			}
+		</style>
+		<script type="text/javascript">
+			var max = '50%';
+			var middle = '29%';
+			var min = '15%';
+		</script>
+	</head>
+
+	<body>
+		<!--
+        	作者：offline
+        	时间：2016-07-15
+        	描述：导航栏
+        -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="background: #4DA2D3; border:none;height: 45px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<img src="images/logo.png" style="width: 150px;height: 50px;margin-left: -30px;margin-bottom: 3px;">
+					<a class="navbar-brand" href="#">
+
+					</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="profile.html">Profile</a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#myModal">Messages</a>
+						</li>
+						<li>
+							<a href="docs.html">Docs</a>
+						</li>
+					</ul>
+					<div class="navbar-right" style="margin:10px auto;width:30px;height:30px;border-radius:50%; overflow:hidden">
+						<img src="images/head.jpg" style="margin:0;width:100%;height:100%;">
+					</div>
+					<form class="navbar-form navbar-right" style="margin-right:20px ;">
+						<input type="text" class="form-control" placeholder="Search...">
+					</form>
+				</div>
+			</div>
+		</nav>
+		<!--
+        	作者：offline
+        	时间：2016-07-15
+        	描述：图片轮播
+        -->
+		<div id="myCarousel" class="carousel slide" style="margin-top: 50px;">
+			<!-- 轮播（Carousel）指标 -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- 轮播（Carousel）项目 -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="images/1.jpg" alt="First slide">
+
+				</div>
+				<div class="item">
+					<img src="images/2.jpg" alt="Second slide">
+				</div>
+				<div class="item">
+					<img src="images/3.jpg" alt="Third slide">
+				</div>
+			</div>
+			<div class="carousel-caption" style="width: 300px;margin: auto;margin-bottom: 10px;">
+				<img src="images/head.jpg" class="img-circle" style="width: 100px;height: 100px;">
+				<div>
+					<b style="font-size: 20px;">Luke Lu</b><br>
+					<a href="#" style="color: white;text-decoration: none;">人值得 命中减少几秒 多买一只表  秒速捉得紧了  而皮肤竟偷偷松了  为何用到尽了 至知哪样紧要  </a>
+				</div>
+				<ul id="myTab" class="nav nav-tabs" style="margin-left: 30px; margin-top:10px ;">
+					<li class="">
+						<a href="#photos" data-toggle="tab" style="">
+							Photos
+						</a>
+					</li>
+					<li>
+						<a href="#others" data-toggle="tab" style="">Others</a>
+					</li>
+					<li>
+						<a href="#anothers" data-toggle="tab" style="">Anothers</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 轮播（Carousel）导航 -->
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+
+		<div id="myTabContent" class="tab-content" style="margin-bottom:70px ;margin-top:10px ;width: 100%;">
+			<div class="tab-pane fade in active" id="photos" style="margin-left:5px ;">
+				<div style="margin: 5px;">
+					<img src="images/instagram_1.jpg" style="height: 200px;width: 15%;">
+					<img src="images/instagram_11.jpg" style="height: 200px;width: 15%;">
+					<img src="images/instagram_1.jpg" style="height: 200px;width:29%">
+					<img src="images/2.jpg" style="height: 200px;width:40%">
+				</div>
+
+				<div style="margin: 5px;">
+					<img src="images/instagram_12.jpg" style="height: 200px;width:29%">
+					<img src="images/1.jpg" style="height: 200px;width:40%">
+					<img src="images/instagram_1.jpg" style="height: 200px;width: 15%;">
+					<img src="images/instagram_1.jpg" style="height: 200px;width: 15%;">
+				</div>
+
+				<div style="margin: 5px;">
+					<img src="images/instagram_1.jpg" style="height: 200px;width: 15%;">
+					<img src="images/instagram_1.jpg" style="height: 200px;width:29%">
+					<img src="images/3.jpg" style="height: 200px;width:40%">
+					<img src="images/instagram_12.jpg" style="height: 200px;width: 15%;">
+				</div>
+
+			</div>
+			<div class="tab-pane fade" id="others">
+				
+			</div>
+			<div class="tab-pane fade" id="anothers">
+				<span>anothers</span>
+			</div>
+
+		</div>
+
+		
+			<!-- /.modal -->
+
+			<!--
+        	作者：offline
+        	时间：2016-07-15
+        	描述：页脚
+        -->
+			<nav class="navbar navbar-inverse navbar-fixed-bottom" style="background: #4DA2D3; border:#4DA2D3 ;border-bottom:5px solid blue;height: 45px;">
+				<div style="margin: 15px;">
+					<b>MY BLOG</b>
+				</div>
+			</nav>
+			
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  			&times;
+          				 </button>
+						<div class="modal-title" id="myModalLabel">
+							<b style="font-size: 15px;">Messages</b>
+							<button type="button" class="btn btn-primary" style="float: right;margin-right:5px;margin-top: -5px;">
+               					New Messages
+            				</button>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>结构树</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<style type="text/css">
+		.panel-header {
+				background: rgb(227, 232, 252) none repeat scroll 0% 0%;
+			}
+	</style>
+</head>
+<body>
+	<div style="margin:5px 0;">
+		<a href="#" class="easyui-linkbutton" onclick="addData();">弹窗显示</a> 
+	</div>
+	<!--<div style="margin:10px 0">
+		<input type="checkbox" checked onchange="$('#tt').tree({cascadeCheck:$(this).is(':checked')})">CascadeCheck 
+		<input type="checkbox" onchange="$('#tt').tree({onlyLeafCheck:$(this).is(':checked')})">OnlyLeafCheck
+	</div>-->
+	<div class="easyui-panel" style="padding:5px" title="结构树">
+		<ul id="tt" class="easyui-tree" data-options="url:'ext/tree_data1.json',method:'get',animate:true,checkbox:true"></ul>
+	</div>
+	
+	<div id="w" class="easyui-window" data-options="modal:true,closed:true,iconCls:'icon-save'," title="结构树" style="width:500px;">
+		
+	</div>
+	
+</body>
+
+<script type="text/javascript">
+	            
+    addDataWin = $('#w').window({                    
+        href:'treestructure.html'
+    });  
+//添加数据弹出窗口  
+    function addData(){  
+        addDataWin.window('open');                       
+    } 
+ 
+</script>
+
+</html>

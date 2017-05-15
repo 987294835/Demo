@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>课程结构</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+</head>
+<style type="text/css">
+			.panel-header {
+				background: rgb(227, 232, 252) none repeat scroll 0% 0%;
+			}
+			
+			.panel-body {
+				background: white none repeat scroll 0% 0%;
+			}
+			
+			.accordion {
+				background: white;
+			}
+			
+			
+		</style>
+<body>
+	<div style="margin:20px 0;"></div>
+	<table title="课程结构" class="easyui-treegrid" style="width:735px;"
+			data-options="
+				url: 'ext/treegrid_data1.json',
+				method: 'get',
+				rownumbers: true,
+				idField: 'id',
+				treeField: 'name'
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'name'" width="250">课程</th>
+				<th data-options="field:'size'" width="200" align="right">课时</th>
+				<th data-options="field:'date'" width="250">课程时间</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

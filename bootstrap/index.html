@@ -1,0 +1,464 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta charset=UTF-8>
+		<title>首页</title>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery在bootstrap.min.js 之前引入 -->
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.navbar-inverse .navbar-nav li a {
+				color: wheat;
+			}
+			
+			body {
+				background: #ebf9f1;
+			}
+			
+			.well {
+				background: white;
+				border: 1px solid #dedede;
+				box-shadow: 0 0 2px #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--
+        	作者：offline
+        	时间：2016-07-15
+        	描述：导航栏
+        -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="background: #4DA2D3; border:none;height: 45px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<img src="images/logo.png" style="width: 150px;height: 50px;margin-left: -30px;margin-bottom: 3px;>
+					<a class="navbar-brand" href="#">
+						
+					</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-left">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="profile.html">Profile</a>
+						</li>
+						<li>
+							<a href="#" data-toggle="modal" data-target="#myModal">Messages</a>
+						</li>
+						<li>
+							<a href="docs.html">Docs</a>
+						</li>
+					
+					</ul>
+					<div class="navbar-right" style="margin:10px auto;width:30px;height:30px;border-radius:50%; overflow:hidden">
+						<img src="images/avatar-dhg.png" style="margin:0;width:100%;height:100%;">
+					</div>
+					<form class="navbar-form navbar-right" style="margin-right:20px ;">
+						<input type="text" class="form-control" placeholder="Search...">
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<!--
+            	作者：offline
+            	时间：2016-07-15
+            	描述：左侧栏
+            -->
+			<div class="col-md-3">
+				<div class="well" style="margin-top: 70px; width: 80%; height: 400px; margin-left: 60px;">
+					<div style="background: rgb(227, 227, 227);height: 150px;width: 252px;margin-left:-20px;margin-top: -20px;border-bottom: 1px solid #dedede;"></div>
+					<img src="images/head.jpg" class="img-circle" style="width: 150px;height: 150px;margin-left:30px ;margin-top: -80px;border: 5px solid white;">
+					<div style="text-align: center;">
+						<b style="font-size: 20px;"><a href="#" style="text-decoration: none;">Luke Lu</a></b><br>
+						<a href="#" style="color: rgb(98, 96, 96);text-decoration: none;">只要在你目光看得见的地方  我会永远记住要活得更坚强 </a>
+					</div>
+					<div class="row" style="margin-top:20px;margin-left: 10px;">
+						<div class="col-sm-5" style="border-right: 1px solid rgb(98, 96, 96);text-align: center;">
+							<span style="font-size: 20px;color: rgb(98, 96, 96);">Friends</span><br>
+							<a href="#" style="text-decoration: none;color: black;font-size: 20px;">12M</a>
+						</div>
+						<div class="col-sm-4" style="border-left: 1px solid rgb(98, 96, 96);text-align: center;">
+							<span style="font-size: 20px;color: rgb(98, 96, 96);">Enemies</span><br>
+							<a href="#" style="text-decoration: none;color: black;font-size: 20px;">1</a>
+						</div>
+					</div>
+				</div>
+				<div class="well" style="margin-top: 20px; width: 80%; height: auto; margin-left: 60px;margin-bottom: 80px;">
+					<b style="font-size: 20px;">Photos·<a href="#" style="text-decoration: none;">Edit</a></b>
+					<div class="row">
+						<div class="col-sm-5" style="margin-right:15px ;">
+							<img src="images/instagram_1.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+							<img src="images/instagram_2.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+							<img src="images/instagram_3.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+							<img src="images/instagram_14.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+						</div>
+						<div class="col-sm-5">
+							<img src="images/instagram_5.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+							<img src="images/instagram_6.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+							<img src="images/instagram_7.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+							<img src="images/instagram_8.jpg" style="width: 90px; height: 90px; margin-top:5px;" />
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--
+            	作者：offline
+            	时间：2016-07-15
+            	描述：中间栏
+            -->
+			<div class="col-md-6">
+				<div class="well" style="margin-top: 70px; width: 100%; height: auto; margin-bottom:70px ;">
+					<div style="width: 650px; border-bottom: 2px solid #dedede;margin-left: -15px;height: 70px;">
+						<div class="form-group" style="margin-top:15px ;margin-left: 25px;">
+							<div class="row">
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="message" placeholder="Message">
+								</div>
+								<div class="col-sm-2">
+									<button type="submit" class="btn btn-default">发送</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div style="width: 650px; border-bottom: 2px solid #dedede;margin-left: -15px;">
+						<div class="row" style="margin-top: 10px;">
+							<div class="col-sm-2">
+								<img src="images/avatar-dhg.png" class="img-circle" style="width: 70px;height: 70px; margin-left: 5px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 20px;">Dave Gamache</b>
+								<span style="float: right;">4min</span><br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									Hard-working, under pressure, can rapidly adapt to the environment.
+							</span>
+								<div style="margin-top: 10px ;">
+									<img src="images/instagram_1.jpg" style="width: 500px;height: 500px;margin-bottom: 10px;" />
+								</div>
+							</div>
+						</div>
+						<footer style="border-top: 1px solid #dedede;">
+							<div class="row" style="margin-top:5px ;margin-bottom: 5px ;">
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" >收藏(100)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" >转发(50)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" data-toggle="modal" data-target="#myModal2" >评论(4)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; ">
+									<a href="#" class="btn" >点赞(1000)</a>
+								</div>
+							</div>
+						</footer>
+					</div>
+					
+					<div style="width: 650px; border-bottom: 2px solid #dedede;margin-left: -15px;">
+						<div class="row" style="margin-top: 10px;">
+							<div class="col-sm-2">
+								<img src="images/avatar-fat.jpg" class="img-circle" style="width: 70px;height: 70px;margin-left: 5px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 20px;">Dave Gamache</b>
+								<span style="float: right;">4min</span><br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									Hard-working, under pressure, can rapidly adapt to the environment.
+							</span>
+								<div style="margin-top: 10px ;">
+									<img src="images/instagram_2.jpg" style="width: 500px;height: 500px;margin-bottom: 10px;" />
+								</div>
+							</div>
+						</div>
+						<footer style="border-top: 1px solid #dedede;">
+							<div class="row" style="margin-top:5px ;margin-bottom: 5px ;">
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" >收藏(100)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" >转发(50)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" data-toggle="modal" data-target="#myModal2" >评论(4)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; ">
+									<a href="#" class="btn" >点赞(1000)</a>
+								</div>
+							</div>
+						</footer>
+					</div>
+					
+					<div style="width: 650px; border-bottom: 2px solid #dedede;margin-left: -15px;">
+						<div class="row" style="margin-top: 10px;">
+							<div class="col-sm-2">
+								<img src="images/avatar-mdo.png" class="img-circle" style="width: 70px;height: 70px;margin-left: 5px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 20px;">Dave Gamache</b>
+								<span style="float: right;">4min</span><br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									Hard-working, under pressure, can rapidly adapt to the environment.
+							</span>
+								<div style="margin-top: 10px ;">
+									<img src="images/instagram_3.jpg" style="width: 500px;height: 500px;margin-bottom: 10px;" />
+								</div>
+							</div>
+						</div>
+						<footer style="border-top: 1px solid #dedede;">
+							<div class="row" style="margin-top:5px ;margin-bottom: 5px ;">
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" >收藏(100)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" >转发(50)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; border-right: 1px solid #dedede;">
+									<a href="#" class="btn" data-toggle="modal" data-target="#myModal2" >评论(4)</a>
+								</div>
+								<div class="col-sm-3" style="text-align: center; ">
+									<a href="#" class="btn" >点赞(1000)</a>
+								</div>
+							</div>
+						</footer>
+					</div>
+
+				</div>
+			</div>
+			<!--
+            	作者：offline
+            	时间：2016-07-15
+            	描述：右侧栏
+            -->
+			<div class="col-md-3">
+
+				<div class="alert alert-warning alert-dismissable" style="margin-top: 70px; width: 80%; height: 100px;">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+     						 &times;
+   					</button>
+					<b>Visit your profile!</b><br>
+					<span>check yourself you are not looking too good!!!!</span>
+				</div>
+				<div class="well" style="margin-top: 20px; width: 80%; height: auto;">
+					<b style="font-size: 20px; ">Sponsored</b>
+					<img src="images/instagram_1.jpg" style="width: 215px;height: 215px; margin-top:10px ;margin-bottom: 10px;">
+					<b>It might be time to visit Iceland.</b><br>
+					<button type="button" class="btn btn-default" style="margin-top:10px ; margin-bottom:10px ;color: #9595fe;">Buy a Ticket</button>
+				</div>
+				<div class="well" style="margin-top: 20px; width: 80%; height: auto; margin-bottom: 70px;">
+					<span style="font-size: 15px;">@ 2016 MyBlog</span>
+					<a href="#" style="text-decoration: none;font-size: 15px;">About</a>
+					<a href="#" style="text-decoration: none;font-size: 15px;">Help</a>
+					<a href="#" style="text-decoration: none;font-size: 15px;">info</a>
+					<a href="#" style="text-decoration: none;font-size: 15px;">Bolgs</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--
+        	作者：offline
+        	时间：2016-07-15
+        	描述：页脚
+        -->
+		<nav class="navbar navbar-inverse navbar-fixed-bottom" style="background: #4DA2D3; border:#4DA2D3 ;border-bottom:5px solid blue;height: 45px;">
+			<div style="margin: 15px;">
+				<b>MY BLOG</b>
+			</div>
+		</nav>
+		<div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  			&times;
+          				 </button>
+						<div class="modal-title" id="myModalLabel">
+							<b style="font-size: 15px;">Messages</b>
+							<button type="button" class="btn btn-primary" style="float: right;margin-right:5px;margin-top: -5px;">
+               					New Messages
+            				</button>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						<div style="width: 100%; border-bottom: 2px solid #dedede;">
+							<div class="row" style="margin-bottom:10px ">
+								<div class="col-sm-2">
+									<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+								</div>
+								<div class="col-sm-10">
+									<b style="font-size: 15px;">Dave Gamache</b>
+									<span>and</span>
+									<b style="font-size: 15px;">1 other</b><br>
+									<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal -->
+			</div>
+			
+		<div>
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  			&times;
+          				 </button>
+					<div class="modal-title" id="myModalLabel">
+						<div class="form-group" style="margin-top:15px ;margin-left: 25px;">
+							<div class="row">
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="message" placeholder="说点什么.....">
+								</div>
+								<div class="col-sm-1">
+									<button type="submit" class="btn btn-default" style="background: gray;color: white;">评论</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-body">
+					<div style="width: 100%; border-bottom: 2px solid #dedede;">
+						<div class="row" style="margin-bottom:10px ">
+							<div class="col-sm-2">
+								<img src="images/avatar-dhg.png" class="img-circle" style="width: 50px;height: 50px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 15px;">Dave Gamache</b>
+								<span style="margin-left: 10px; color: gray;">4 hours ago</span>
+								<br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%; border-bottom: 2px solid #dedede;margin-top: 5px;">
+						<div class="row" style="margin-bottom:10px ">
+							<div class="col-sm-2">
+								<img src="images/avatar-fat.jpg" class="img-circle" style="width: 50px;height: 50px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 15px;">Dade Machicle</b>
+								<span style="margin-left: 10px; color: gray;">6 hours ago</span>
+								<br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%; border-bottom: 2px solid #dedede; margin-top: 5px;">
+						<div class="row" style="margin-bottom:10px ">
+							<div class="col-sm-2">
+								<img src="images/avatar-mdo.png" class="img-circle" style="width: 50px;height: 50px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 15px;">Gury Gary</b>
+								<span style="margin-left: 10px; color: gray;">8 hours ago</span>
+								<br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+							</div>
+						</div>
+					</div>
+					<div style="width: 100%; border-bottom: 2px solid #dedede;margin-top: 5px;">
+						<div class="row" style="margin-bottom:10px ">
+							<div class="col-sm-2">
+								<img src="images/instagram_15.jpg" class="img-circle" style="width: 50px;height: 50px;">
+							</div>
+							<div class="col-sm-10">
+								<b style="font-size: 15px;">Jack Man</b>
+								<span style="margin-left: 10px; color: gray;">12 hours ago</span>
+								<br>
+								<span>Serious and responsible work, prudence, a strong sense of collective, a group spirit of collaboration; 
+									A strong practical manipulative ability, self-learning ability and organizational capacity; 
+									...
+								</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+	</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>新增学生</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	
+</head>
+<body>
+	
+	
+	<div class="easyui-panel" title="" style="width:250px;height: 250px; background: white; border: white;">
+		<table class="form-table" cellpadding="5">
+			<tr>
+				<td>学号:</td>
+				<td><input class="easyui-validatebox textbox" data-options="required:true,validType:'length[1,100]'"></td>
+			</tr>
+			<tr>
+				<td>学生姓名:</td>
+				<td><input class="easyui-validatebox textbox" data-options="required:true"></td>
+			</tr>
+			<tr>
+				<td>性别:</td>
+				<td>
+					<input type="radio" value="" name="sex" checked="checked" data-options="required:true">男
+					<input type="radio" value="" name="sex">女
+				</td>
+			</tr>
+			<tr>
+				<td>年级:</td>
+				<td>
+					<select class="easyui-combobox" panelHeight="auto" style="width:100px" data-options="required:true">
+						<option value="java">一年级</option>
+						<option value="c">二年级</option>
+						<option value="basic">三年级</option>
+						<option value="perl">四年级</option>
+						<option value="python">五年级</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>年龄:</td>
+				<td><input class="easyui-validatebox textbox" data-options="required:true,validType:'length[1,100]'"></td>
+			</tr>
+			<tr>
+				<td>分数:</td>
+				<td><input class="easyui-validatebox textbox" data-options="required:true"></td>
+			</tr>
+			<tr>
+				<td>爱好:</td>
+				<td>
+					<input type="checkbox">足球	
+					<input type="checkbox">篮球
+					<input type="checkbox">游泳
+				</td>
+			</tr>
+		</table>
+	</div>
+	<style scoped="scoped">
+		.textbox{
+			height:20px;
+			margin:0;
+			padding:0 2px;
+			box-sizing:content-box;
+		}
+		.form-table td{
+			vertical-align: top;
+			line-height: 20px;
+		}
+		.error-message{
+			margin: 0;
+			padding: 0;
+			color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function err(target, message){
+			var t = $(target);
+			if (t.hasClass('textbox-text')){
+				t = t.parent();
+			}
+			var m = t.next('.error-message');
+			if (!m.length){
+				m = $('<div class="error-message"></div>').insertAfter(t);
+			}
+			m.html(message);
+		}
+	</script>
+</body>
+</html>
