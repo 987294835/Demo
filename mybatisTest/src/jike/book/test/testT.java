@@ -28,7 +28,7 @@ public class testT {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		session = sqlSessionFactory.openSession();
 		JikeUser temp = session.selectOne("findById", 1);
-		System.out.println("ÓÃ»§Ãû====>"+temp.getUsername());
+		System.out.println("ç”¨æˆ·å====>"+temp.getUsername());
 		session.close();
 	}
 }
